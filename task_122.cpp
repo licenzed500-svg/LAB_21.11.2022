@@ -55,10 +55,10 @@ void sort_arr(int* arr, short arrsize)
 
 short found_max(int* arr, short arrsize)
 {
-    short max = 0;
+    short max = arr[0];
     for(short i = 0; i<arrsize; i++)
     {
-       if(arr[i]>max)
+       if(arr[i]<max)
        {
            max = i;
        }
