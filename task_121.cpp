@@ -41,9 +41,16 @@ void array_out(int* arr, short arrsize)
     }
 }
 
-void sort_arr(int* arr)
+void sort_arr(int* arr, short arrsize)
 {
-    std::sort(std::begin(arr), std::end(arr));
+    for(short i = 0; i<arrsize; i++)
+    {
+        
+       if(arr[i]<arr[i+1])
+       {
+           std::swap(arr[i] , arr[i+1]);
+       }
+    }
 }
 
 int main()
@@ -52,9 +59,10 @@ int main()
     const unsigned short arrsize = get_arr_size();
     int arr[arrsize];
     get_elements(arr, arrsize);
-    sort_arr(arr);
+    sort_arr(arr, arrsize);
     change_element(arr, arrsize);
     array_out(arr, arrsize);
     return 0;
 
 }
+
